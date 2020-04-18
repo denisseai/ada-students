@@ -10,9 +10,14 @@ const Student = (props) => {
   // Function to toggle present- event handler
   const onButtonClick = () => setPresent(!present);
 
+  const onFullNameChange = (event) => {
+    setFullName(event.target.value);
+  };
+
   return (
     <div>
-      <h3>{props.fullName}</h3>
+      <h3>{fullName}</h3>
+      <input value={fullName} onChange={onFullNameChange}/>
       <ul>
         <li>Class: C13</li>
         <li>Birthday: {props.birthday}</li>
