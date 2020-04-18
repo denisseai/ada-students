@@ -1,30 +1,33 @@
-import React, {useState} from "react";
+import React from "react";
 import PropTypes from 'prop-types';
 
 const Student = (props) => {
 
-  // hooks  
-  const [present, setPresent] = useState(props.present);
-  const [fullName, setFullName] = useState(props.fullName);
+  // hooks  (not needed after nested video)
+  // const [present, setPresent] = useState(props.present);
+  // const [fullName, setFullName] = useState(props.fullName);
 
   // Function to toggle present- event handler
-  const onButtonClick = () => setPresent(!present);
+  // const onButtonClick = () => setPresent(!present);
 
-  const onFullNameChange = (event) => {
-    setFullName(event.target.value);
-  };
+  // const onFullNameChange = (event) => {
+  //   setFullName(event.target.value);
+  // };
+
+  const onButtonClick = () => {};
+  const onFullNameChange = (event) => {};
 
   return (
     <div>
-      <h3>{fullName}</h3>
-      <input value={fullName} onChange={onFullNameChange}/>
+      <h3>{props.fullName}</h3>
+      <input value={props.fullName} onChange={onFullNameChange}/>
       <ul>
         <li>Class: C13</li>
         <li>Birthday: {props.birthday}</li>
         <li>Email: {props.email}</li>
       </ul>
       <button onClick={onButtonClick}>
-        Mark { present ? 'Absent' : 'Present'}
+        Mark { props.present ? 'Absent' : 'Present'}
       </button>
     </div>
   );
