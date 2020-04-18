@@ -24,28 +24,21 @@ function App() {
   const [studentList, setStudentList] = useState(students);
   
   const updateStudent = (updatedStudent) =>{
-    const students = [];
+    const studentsNew = [];
 
     studentList.forEach((student) => {
-      if (student.id == updatedStudent.id){
-        students.push(updatedStudent); //Grabs new data, discards old
+      if (student.id === updatedStudent.id){
+        studentsNew.push(updatedStudent); //Grabs new data, discards old
       }else{
-        students.push(student); //Grabs unchanged data, maintaining list order
+        studentsNew.push(student); //Grabs unchanged data, maintaining list order
       }
     });
-    setStudentList(students);
+    setStudentList(studentsNew);
   };
 
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>
-          Ada Students
-        </h1>
-      </header>
-      <main>
-        <StudentCollection students={studentList} />
-      </main>
+        <StudentCollection students={studentList} updateStudentCallback={updateStudent}/>
     </div>
   );
 }

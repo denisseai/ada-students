@@ -11,6 +11,8 @@ const StudentCollection = (props) => {
         birthday={student.birthday}
         key={student.email}
         present={student.present}
+        id={student.id}
+        updateStudentCallback={props.updateStudentCallback}
       />
     );
   });

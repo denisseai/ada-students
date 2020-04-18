@@ -14,12 +14,31 @@ const Student = (props) => {
   //   setFullName(event.target.value);
   // };
 
-  const onButtonClick = () => {};
-  const onFullNameChange = (event) => {};
+  const onButtonClick = () => { // How we switch from absent to present and back
+    const updatedStudent = {
+      fullName: props.fullName,
+      email: props.email,
+      present: !props.present,
+      id: props.id
+    }
+
+    // Send updated student back to App.js
+    props.updateStudentCallback(updatedStudent);
+  };
+
+  const onFullNameChange = (event) => {
+    const updatedStudent = {
+      fullName: event.target.value,
+      email: props.email,
+      present: props.present,
+      id: props.id
+    }
+    props.updateStudentCallback(updatedStudent);
+  };
 
   return (
-    <div>
-      <h3>{props.fullName}</h3>
+    <div className='student'>
+      <h3 className={props.present ? 'present' : 'absent'}>{props.fullName}</h3>
       <input value={props.fullName} onChange={onFullNameChange}/>
       <ul>
         <li>Class: C13</li>
@@ -38,6 +57,8 @@ Student.propType = {
   email: PropTypes.string,
   birthday: PropTypes.string,
   present: PropTypes.bool.isRequired,
+  id: PropTypes.number,
+
 };
 
 Student.defaultProps = {

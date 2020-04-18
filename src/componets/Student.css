@@ -1,0 +1,7 @@
+.student .absent {
+  color: red;
+}
+
+.student .present{
+  color: green;
+}
