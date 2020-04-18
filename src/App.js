@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
+import Student from './components/Student';
 import './App.css';
 
 function App() {
@@ -11,9 +11,7 @@ function App() {
         </h1>
       </header>
       <main>
-        <p>
-          students go here
-        </p>
+        <Student />
       </main>
     </div>
   );
