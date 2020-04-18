@@ -2,17 +2,23 @@ import React, {useState} from "react";
 import PropTypes from 'prop-types';
 
 const Student = (props) => {
+
+  // hooks  
   const [present, setPresent] = useState(props.present);
+  const [fullName, setFullName] = useState(props.fullName);
+
+  // Function to toggle present- event handler
+  const onButtonClick = () => setPresent(!present);
 
   return (
-    <div className="Student">
+    <div>
       <h3>{props.fullName}</h3>
       <ul>
         <li>Class: C13</li>
         <li>Birthday: {props.birthday}</li>
         <li>Email: {props.email}</li>
       </ul>
-      <button>
+      <button onClick={onButtonClick}>
         Mark { present ? 'Absent' : 'Present'}
       </button>
     </div>
