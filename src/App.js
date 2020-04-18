@@ -5,23 +5,27 @@ import './App.css';
 const studentList = [
   {
     fullName: 'Ada Lovelace',
-    birthdate: 'Feb 1, 1832',
+    birthday: 'Feb 1, 1832',
     email: 'ada@dev.org',
+    present: true,
   },
   {
     fullName: 'Grace Hopper',
-    birthdate: 'Jan 2, 1932',
+    birthday: 'Jan 2, 1932',
     email: 'grace@navy.mil',
+    present: false,
   },
   {
     fullName: 'Dee del Rosa',
-    birthdate: 'Aug 2, 1992',
+    birthday: 'Aug 2, 1992',
     email: 'dee@dev.org',
+    present: true,
   },
   {
     fullName: 'Denisse A',
-    birthdate: 'Aug 3, 1987',
-    email: 'denisse@dev.org'
+    birthday: 'Aug 3, 1987',
+    email: 'denisse@dev.org',
+    present: true,
   }
 ];
 

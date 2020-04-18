@@ -8,8 +8,9 @@ const StudentCollection = (props) => {
       <Student 
         fullName={student.fullName}
         email={student.email}
-        birthdate={student.birthdate}
+        birthday={student.birthday}
         key={student.email}
+        present={student.present}
       />
     );
   });
