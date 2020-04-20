@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Student from './components/Student';
+import NewStudentForm from './components/NewStudentForm';
 import StudentCollection from './components/StudentCollection';
 import './App.css';
 
@@ -32,13 +32,26 @@ function App () {
         students.push(student);
       }
     });
-
-    setStudentList(students);
   }
+  const addStudent = (student) => {
+    // Duplicate Student List
+    const newStudentList = [...students];
+    // Find the max id and add one
+    const nextId = Math.max(...newStudentList.map((student) => student.id)) + 1;
 
+    newStudentList.push({
+      fullName: student.fullName,
+      email: student.email,
+      present: false,
+      id: nextId,
+    });
+    setStudentList(newStudentList);
+  }
+    
   return (
     <div className="App">
       <StudentCollection students={studentList} onUpdateStudent={updateStudent} />
+      <NewStudentForm onSubmitCallback={addStudent}/>
     </div>
   );
 }
